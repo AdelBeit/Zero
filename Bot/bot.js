@@ -223,6 +223,6 @@ function sendImage(imageFileName="./assets/image.jpg"){
 
 // getGroupID();
 // makeBot("Sand");
-sendMessage("Gonna be AFK for a second");
-sendLocation();
+// sendMessage("Gonna be AFK for a second");
+// sendLocation();
 // sendImage();

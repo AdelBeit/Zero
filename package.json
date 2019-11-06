@@ -8,10 +8,13 @@
     "test": "nodemon ./Bot/bot.js",
     "dev": "node ./Bot/bot.js"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/AdelBeit/Groupme-Bot-NodeJS.git"
-},
+    "type": "git",
+    "url": "https://github.com/AdelBeit/Groupme-Bot-NodeJS.git"
+  },
   "author": "Elemelon",
   "license": "Apache 2.0",
   "bugs": {

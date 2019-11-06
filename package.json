@@ -1,0 +1,21 @@
+{
+  "name": "lemon-pie",
+  "version": "1.0.0",
+  "description": "Tempalte for making and using Groupme Bots",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node ./Server/server.js",
+    "test": "nodemon ./Bot/bot.js",
+    "dev": "node ./Bot/bot.js"
+  },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/AdelBeit/Groupme-Bot-NodeJS.git"
+},
+  "author": "Elemelon",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/AdelBeit"
+  },
+  "homepage": "https://github.com/AdelBeit/groupme-bot-nodejs#readme"
+}

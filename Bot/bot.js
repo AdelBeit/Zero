@@ -226,3 +226,4 @@ function sendImage(imageFileName="./assets/image.jpg"){
 // sendMessage("Gonna be AFK for a second");
 // sendLocation();
 // sendImage();
+console.log('ran');

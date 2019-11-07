@@ -223,7 +223,7 @@ function sendImage(imageFileName="./assets/image.jpg"){
 
 // getGroupID();
 // makeBot("Wire","https://desolate-springs-47892.herokuapp.com");
-// sendMessage("Gonna be AFK for a second");
+sendMessage("Gonna be AFK for a second");
 // sendLocation();
 // sendImage();
 console.log('ran');
@@ -239,11 +239,13 @@ const router = (req,res) => {
   
   // default message to send
   if(method == 'GET'){
+    console.log("got something");
     sendMessage("AYYYYY TOUGH GUY");
   }
 
   // upon being summoned do something
   if(method == 'POST'){
+    console.log("post something");
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');
     

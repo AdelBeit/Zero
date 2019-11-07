@@ -223,7 +223,7 @@ function sendImage(imageFileName="./assets/image.jpg"){
 
 // getGroupID();
 // makeBot("Wire","https://desolate-springs-47892.herokuapp.com");
-sendMessage("Gonna be AFK for a second");
+// sendMessage("Gonna be AFK for a second");
 // sendLocation();
 // sendImage();
 console.log('ran');
@@ -232,11 +232,14 @@ console.log('ran');
 
 // router code
 const url = require('url');
+
 const router = (req,res) => {
+
   req.requrl = url.parse(req.url, true);
   const path = req.requrl.pathname;
   const method = req.method;
   
+
   // default message to send
   if(method == 'GET'){
     console.log("got something");
@@ -252,11 +255,16 @@ const router = (req,res) => {
     const incommingMessage = JSON.parse(req.chunks[0]),
     summonRegex = /^!wire/g;
     if(incommingMessage.text && summonRegex.test(incomingMessage.text)){
-      sendImage();
+      // sendImage();
     }
     else {
-      sendMessage("don't care");
+      // sendMessage("don't care");
     }
+
+    res.on('error', (e) => {
+      console.error(e);
+      console.log();
+    });
 
     res.end(incomingMessage+"\n");
   }
@@ -276,6 +284,9 @@ const server = https.createServer();
 
 server.on('request', (req, res) => {
   router(req,res);
+  // res.statusCode = 200;
+  // res.setHeader('Content-Type', "text/html");
+  // res.end('you dropped something\n');
 });
 
 server.listen(serverPort,serverHostname, () => {

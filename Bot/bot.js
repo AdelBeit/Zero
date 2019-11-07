@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 require('dotenv').config();
-const https = require('https');
+const https = require('http');
 const fs = require('fs');
 
 const TOKEN = process.env.TOKEN;
@@ -222,8 +222,34 @@ function sendImage(imageFileName="./assets/image.jpg"){
 }
 
 // getGroupID();
-// makeBot("Sand");
+// makeBot("Wire","https://desolate-springs-47892.herokuapp.com");
 // sendMessage("Gonna be AFK for a second");
 // sendLocation();
 // sendImage();
 console.log('ran');
+
+// -----------  temporarily housing  ------------
+
+// router code
+const url = require('url');
+const router = (req,res) => {
+  req.requrl = url.parse(req.url, true);
+  const path = req.requrl.pathname;
+  switch(path){
+    case '/':
+      
+  }
+}
+
+// server code
+const serverPort = process.env.PORT || 3000;
+const server = http.createServer();
+
+
+server.on('request', (req, res) => {
+  router(req,res);
+});
+
+server.listen(serverPort,serverHostname, () => {
+  console.log(`Server running at http://${serverHostname}:${serverPort}/`);
+});

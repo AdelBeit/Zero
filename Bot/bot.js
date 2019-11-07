@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-require('dotenv').config();
-const https = require('http');
+// require('dotenv').config();
+const https = require('https');
 const fs = require('fs');
 
 const TOKEN = process.env.TOKEN;
@@ -28,7 +28,7 @@ function getGroupID(){
       process.stdout.write(d);
     });
   });
-  
+
   req.on('error', (e) => {
     console.error(e);
     console.log();
@@ -99,7 +99,7 @@ function sendMessage(message){
       process.stdout.write(d);
     });
   });
-  
+
   req.on('error', (e) => {
     console.error(e);
     console.log();
@@ -223,7 +223,7 @@ function sendImage(imageFileName="./assets/image.jpg"){
 
 // getGroupID();
 // makeBot("Wire","https://desolate-springs-47892.herokuapp.com");
-// sendMessage("Gonna be AFK for a second");
+sendMessage("Gonna be AFK for a second");
 // sendLocation();
 // sendImage();
 console.log('ran');
@@ -235,16 +235,44 @@ const url = require('url');
 const router = (req,res) => {
   req.requrl = url.parse(req.url, true);
   const path = req.requrl.pathname;
-  switch(path){
-    case '/':
-      
+  const method = req.method;
+  
+  // default message to send
+  if(method == 'GET'){
+    console.log("got something");
+    sendMessage("AYYYYY TOUGH GUY");
   }
+
+  // upon being summoned do something
+  if(method == 'POST'){
+    console.log("post something");
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    
+    const incommingMessage = JSON.parse(req.chunks[0]),
+    summonRegex = /^!wire/g;
+    if(incommingMessage.text && summonRegex.test(incomingMessage.text)){
+      sendImage();
+    }
+    else {
+      sendMessage("don't care");
+    }
+
+    res.end(incomingMessage+"\n");
+  }
+
+  res.on('error', (e) => {
+    console.error(e);
+    console.log();
+  });
+
+  res.end("nothing new here\n");
 }
 
 // server code
 const serverPort = process.env.PORT || 3000;
-const server = http.createServer();
-
+const serverHostname = process.env.HOSTNAME || "localhost";
+const server = https.createServer();
 
 server.on('request', (req, res) => {
   router(req,res);

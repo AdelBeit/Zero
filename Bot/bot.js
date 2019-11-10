@@ -171,64 +171,64 @@ console.log('ran');
 // -----------  temporarily housing  ------------
 
 // router code
-// const url = require('url');
+const url = require('url');
 
-// const router = (req,res) => {
+const router = (req,res) => {
 
-//   req.requrl = url.parse(req.url, true);
-//   const path = req.requrl.pathname;
-//   const method = req.method;
+  req.requrl = url.parse(req.url, true);
+  const path = req.requrl.pathname;
+  const method = req.method;
   
 
-//   // default message to send
-//   if(method == 'GET'){
-//     console.log("got something");
-//     sendMessage("AYYYYY TOUGH GUY");
-//   }
+  // default message to send
+  if(method == 'GET'){
+    console.log("got something");
+    sendMessage("AYYYYY TOUGH GUY");
+  }
 
-//   // upon being summoned do something
-//   if(method == 'POST'){
-//     console.log("post something");
-//     res.statusCode = 200;
-//     res.setHeader('Content-Type', 'text/html');
+  // upon being summoned do something
+  if(method == 'POST'){
+    console.log("post something");
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
     
-//     const incommingMessage = JSON.parse(req.chunks[0]),
-//     summonRegex = /^!wire/g;
-//     if(incommingMessage.text && summonRegex.test(incomingMessage.text)){
-//       // sendImage();
-//     }
-//     else {
-//       // sendMessage("don't care");
-//     }
+    const incommingMessage = JSON.parse(req.chunks[0]),
+    summonRegex = /^!wire/g;
+    if(incommingMessage.text && summonRegex.test(incomingMessage.text)){
+      // sendImage();
+    }
+    else {
+      // sendMessage("don't care");
+    }
 
-//     res.on('error', (e) => {
-//       console.error(e);
-//       console.log();
-//     });
+    res.on('error', (e) => {
+      console.error(e);
+      console.log();
+    });
 
-//     res.end(incomingMessage+"\n");
-//   }
+    res.end(incomingMessage+"\n");
+  }
 
-//   res.on('error', (e) => {
-//     console.error(e);
-//     console.log();
-//   });
+  res.on('error', (e) => {
+    console.error(e);
+    console.log();
+  });
 
-//   res.end("nothing new here\n");
-// }
+  res.end("nothing new here\n");
+}
 
-// // server code
-// const serverPort = process.env.PORT || 3000;
-// const serverHostname = process.env.HOSTNAME || "localhost";
-// const server = https.createServer();
+// server code
+const serverPort = process.env.PORT || 3000;
+const serverHostname = process.env.HOSTNAME || "localhost";
+const server = https.createServer();
 
-// server.on('request', (req, res) => {
-//   router(req,res);
-//   // res.statusCode = 200;
-//   // res.setHeader('Content-Type', "text/html");
-//   // res.end('you dropped something\n');
-// });
+server.on('request', (req, res) => {
+  router(req,res);
+  // res.statusCode = 200;
+  // res.setHeader('Content-Type', "text/html");
+  // res.end('you dropped something\n');
+});
 
-// server.listen(serverPort,serverHostname, () => {
-//   console.log(`Server running at http://${serverHostname}:${serverPort}/`);
-// });
+server.listen(serverPort,serverHostname, () => {
+  console.log(`Server running at http://${serverHostname}:${serverPort}/`);
+});

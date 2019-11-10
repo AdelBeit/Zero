@@ -9,6 +9,8 @@ const BOTID = process.env.BOTID;
 const PORT = 443;
 const HOSTNAME = "api.groupme.com";
 
+console.log(TOKEN);
+
 let getGroupIDReq = () => {
   return {
     options: {

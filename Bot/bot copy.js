@@ -165,7 +165,7 @@ function sendImage(imageFileName="./assets/image.jpg"){
 // makeBot("Wire","https://desolate-springs-47892.herokuapp.com");
 // sendMessage("Gonna be AFK for a second");
 // sendLocation();
-// sendImage();
+sendImage();
 console.log('ran');
 
 // -----------  temporarily housing  ------------

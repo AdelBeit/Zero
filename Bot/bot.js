@@ -241,10 +241,10 @@ const router = (req,res) => {
   
 
   // default message to send
-  if(method == 'GET'){
-    console.log("got something");
-    sendMessage("AYYYYY TOUGH GUY");
-  }
+  // if(method == 'GET'){
+  //   console.log("got something");
+  // }
+  sendMessage("AYYYYY TOUGH GUY");
 
   // upon being summoned do something
   if(method == 'POST'){
@@ -290,5 +290,5 @@ server.on('request', (req, res) => {
 });
 
 server.listen(serverPort,serverHostname, () => {
-  console.log(`Server running at http://${serverHostname}:${serverPort}/`);
+  console.log(`Server running at https://${serverHostname}:${serverPort}/`);
 });

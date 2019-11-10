@@ -21,8 +21,5 @@
     "url": "https://github.com/AdelBeit"
   },
   "homepage": "https://github.com/AdelBeit/groupme-bot-nodejs#readme",
-  "devDependencies": {},
-  "dependencies": {
-    "dotenv": "^8.2.0"
-  }
+  "devDependencies": {}
 }

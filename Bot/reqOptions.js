@@ -8,6 +8,9 @@ const HOSTNAME = "api.groupme.com";
 
 /**
  * reqType: groupID, makeBot, messagePost, locationPost imageUpload, imagePost
+ * 
+ * returns appropriate http request options and headers 
+ * based on the given request type
  */
 function getOptions(reqType){
     const options = {};

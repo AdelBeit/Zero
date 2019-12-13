@@ -10,7 +10,6 @@ const BOTID = process.env.BOTID;
 const BOTID2 = process.env.NOCALLBACKBOT;
 const HOSTNAME = "api.groupme.com";
 
-
 /**
  * Returns all group IDs, for the given token env variable, in a JSON format
  */
@@ -180,11 +179,27 @@ function sendImage(imageFileName="./assets/image.jpg"){
   getImageURL(imageFileName);
 }
 
-// getGroupID();
-// makeBot("Wire","https://desolate-springs-47892.herokuapp.com");
-// sendMessage("Gonna be AFK for a second");
-// sendLocation();
-// sendImage();
+function main(){
+  // getGroupID();
+  // makeBot("Wire","https://desolate-springs-47892.herokuapp.com");
+  // sendMessage("Gonna be AFK for a second");
+  // sendLocation();
+  // sendImage();
+}
+
+/**
+ * generator a string of random chars
+ */
+function randChars(len=10){
+  const alphabet = 'abcde12345';
+  let word = '',
+  index = 0;
+  for(let i=0;i<len;i++){
+    index = Math.floor(Math.random()*alphabet.length);
+    word+=alphabet.substring(index,index+1);
+  }
+  return word;
+}
 
 module.exports = {
   getGroupID: getGroupID,
@@ -193,5 +208,6 @@ module.exports = {
   sendLocation: sendLocation,
   getImageURL: getImageURL,
   postImage: postImage,
-  sendImage: sendImage
+  sendImage: sendImage,
+  randChars: randChars
 }

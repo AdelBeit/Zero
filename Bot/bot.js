@@ -27,7 +27,7 @@ function respond(){
     if(request.text.match(COMMANDS[0])){
       botResponse = request.text.replace(nameCheck,'').replace(COMMANDS[0],'');
       this.response.writeHead(200);
-
+      utils.sendMessage("Aight Chief");
       imagePath = mock(botResponse);
       utils.sendImage(imagePath);
       this.response.end();

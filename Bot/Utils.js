@@ -177,7 +177,7 @@ function postImage(url,caption=""){
 /**
  * Send an image (accepts .png/.jpeg/.jpg)
  */
-function sendImage(imageFileName="./assets/image.jpg",caption=""){
+function sendImage(imageFileName="./Assets/raw/alien.jpg",caption=""){
   imageFilename = path.resolve(__dirname, imageFileName);
   getImageURL(imageFileName,caption);
 }

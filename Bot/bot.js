@@ -4,6 +4,7 @@ const https = require('https');
 const fs = require('fs');
 const reqOptions = require('./reqOptions');
 const utils = require('./Utils');
+const caption = require('./imgCaption').caption;
 
 const TOKEN = process.env.TOKEN;
 const GROUPID = process.env.GROUPID;
@@ -19,14 +20,16 @@ const BOTNAME = 'wire';
 function respond(){
   const request = JSON.parse(this.request.chunks[0]),
   nameCheck = new RegExp("@" + BOTNAME,'im');
-  let botResponse = "what the hell you talking about boy";
+  let botResponse = "what the hell you talking about boy",
+  imagePath = '';
 
   if(request.text.match(nameCheck)){
     if(request.text.match(COMMANDS[0])){
       botResponse = request.text.replace(nameCheck,'').replace(COMMANDS[0],'');
       this.response.writeHead(200);
-      botResponse = mockery(botResponse);
-      utils.sendMessage(botResponse);
+
+      imagePath = mock(botResponse);
+      utils.sendImage(imagePath);
       this.response.end();
     } else{
       this.response.writeHead(200);
@@ -37,9 +40,9 @@ function respond(){
 }
 
 /**
- * Returns the given string with the capitalization of the individual letters randomized
+ * Takes a string and randomizes the capitalization, then overlays it over an image and returns its path
  */
-function mockery(string){
+function mock(string){
   let newChar, i, coinFace,
   newString = string.toLowerCase();
   for(i = 0; i < string.length; i++){
@@ -52,7 +55,10 @@ function mockery(string){
     newString += newChar;
     newString += string.substring(i+1);
   }
-  return newString;
+
+  const rawImage = './Assets/raw/spongebob.jpg';
+  const imagePath = caption(rawImage, newString);
+  return imagePath;
 }
 
 module.exports = {

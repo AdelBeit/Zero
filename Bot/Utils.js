@@ -3,6 +3,8 @@
 const https = require('https');
 const fs = require('fs');
 const reqOptions = require('./reqOptions');
+const path = require('path');
+
 
 const TOKEN = process.env.TOKEN;
 const GROUPID = process.env.GROUPID;
@@ -121,7 +123,7 @@ function sendLocation(longitude=40,latitude=70,name="Monsters Inc",type="locatio
 /** 
  * Upload an image to groupme servers and grab url
  */
-function getImageURL(imageFileName){
+function getImageURL(imageFileName,caption=""){
   // upload the image
   const options = reqOptions.getOptions("imageUpload");
   const request = https.request(options, (response) => {
@@ -129,7 +131,7 @@ function getImageURL(imageFileName){
       // grab the url from the response
       let url = JSON.parse(data.toString()).payload.picture_url;
       // post the image to the chat
-      postImage(url);
+      postImage(url,caption);
     });
   });
   
@@ -148,7 +150,7 @@ function getImageURL(imageFileName){
 /**
  * Post the image on the chat
  */
-function postImage(url,caption="Look at this cute pic I found"){
+function postImage(url,caption=""){
   const options = reqOptions.getOptions("imagePost");
   const request = https.request(options, (response) => {
     response.on('data', (data) => {
@@ -175,8 +177,9 @@ function postImage(url,caption="Look at this cute pic I found"){
 /**
  * Send an image (accepts .png/.jpeg/.jpg)
  */
-function sendImage(imageFileName="./assets/image.jpg"){
-  getImageURL(imageFileName);
+function sendImage(imageFileName="./assets/image.jpg",caption=""){
+  imageFilename = path.resolve(__dirname, imageFileName);
+  getImageURL(imageFileName,caption);
 }
 
 function main(){

@@ -3,14 +3,12 @@
 const https = require('https');
 const fs = require('fs');
 const reqOptions = require('./reqOptions');
-const path = require('path');
 
 
-const TOKEN = process.env.TOKEN;
-const GROUPID = process.env.GROUPID;
-const BOTID = process.env.BOTID;
-const BOTID2 = process.env.NOCALLBACKBOT;
-const HOSTNAME = "api.groupme.com";
+const TOKEN = process.env.TOKEN,
+GROUPID = process.env.GROUPID,
+BOTID = process.env.BOTID,
+HOSTNAME = "api.groupme.com";
 
 /**
  * Returns all group IDs, for the given token env variable, in a JSON format
@@ -177,8 +175,7 @@ function postImage(url,caption=""){
 /**
  * Send an image (accepts .png/.jpeg/.jpg)
  */
-function sendImage(imageFileName="./Assets/raw/alien.jpg",caption=""){
-  imageFilename = path.resolve(__dirname, imageFileName);
+function sendImage(imageFileName="",caption=""){
   getImageURL(imageFileName,caption);
 }
 

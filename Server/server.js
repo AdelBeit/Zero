@@ -1,13 +1,13 @@
 const https = require('http');
 const port = process.env.PORT || 3000;
-const bot = require('./../Bot/bot');
-const fs = require('fs');
+const bot = require('../Bot/bot');
 
 const server = https.createServer();
 
 server.on('request', (request, response) => {
     response.writeHead(200, {"Content-Type": "text/html"});
-    let url = request.url, method = request.method;
+    let url = request.url, 
+    method = request.method;
 
     // store the request data for later processing
     request.chunks = [];

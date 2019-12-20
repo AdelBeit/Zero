@@ -1,10 +1,10 @@
 // require('dotenv').config();
 
-const TOKEN = process.env.TOKEN;
-const GROUPID = process.env.GROUPID;
-const BOTID = process.env.BOTID;
-const BOTID2 = process.env.NOCALLBACKBOT;
-const HOSTNAME = "api.groupme.com";
+const TOKEN = process.env.TOKEN,
+GROUPID = process.env.GROUPID,
+BOTID = process.env.BOTID,
+BOTID2 = process.env.NOCALLBACKBOT,
+HOSTNAME = "api.groupme.com";
 
 /**
  * reqType: groupID, makeBot, messagePost, locationPost imageUpload, imagePost

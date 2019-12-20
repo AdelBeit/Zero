@@ -1,16 +1,8 @@
 /* eslint-disable no-unused-vars */
 // require('dotenv').config();
-const https = require('https');
-const fs = require('fs');
-const reqOptions = require('./reqOptions');
 const utils = require('./Utils');
 const caption = require('./imgCaption').caption;
 
-const TOKEN = process.env.TOKEN;
-const GROUPID = process.env.GROUPID;
-const BOTID = process.env.BOTID;
-const BOTID2 = process.env.NOCALLBACKBOT;
-const HOSTNAME = "api.groupme.com";
 const COMMANDS = [/mock/i];
 const BOTNAME = 'wire';
 
@@ -28,8 +20,9 @@ function respond(){
       botResponse = request.text.replace(nameCheck,'').replace(COMMANDS[0],'');
       this.response.writeHead(200);
       utils.sendMessage("Aight Chief");
-      imagePath = mock(botResponse);
-      utils.sendImage(imagePath);
+      mock(botResponse)
+      .then(path => {utils.sendImage(path)})
+      .catch(error => {if(error) throw error});
       this.response.end();
     } else{
       this.response.writeHead(200);

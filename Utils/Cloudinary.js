@@ -7,7 +7,7 @@
 const cloudinary = require('cloudinary').v2;
 
 // default image
-const IMAGE_URL = '../Assets/raw/test2.jpg';
+const IMAGE_URL = 'https://raw.githubusercontent.com/AdelBeit/Groupme-Bot-NodeJS/heroku/Assets/raw/test2.jpg';
 
 let CLOUD_NAME = process.env.CLOUD_NAME,
 API_KEY = process.env.API_KEY,
@@ -56,7 +56,7 @@ function caption(caption, imageURL=IMAGE_URL, tags="mockery"){
                });
           })
 
-          .catch(error => {if (error) reject(error)});
+          .catch(error => {if (error) throw error});
      });
 }
 
@@ -73,14 +73,16 @@ function remove(publicID){
      .catch(error => {if (error) throw error});
 }
 
-caption("testing")
-.then(image => {
-     remove(image.id, (error, result) => {
-          if (error) throw error;
-          return result;
-     });
-})
-.catch((error) => {if(error) throw error});
+function basicTesting(){
+     caption("testing")
+     .then(image => {
+          remove(image.id, (error, result) => {
+               if (error) throw error;
+               return result;
+          })
+     })
+     .catch((error) => {if(error) throw error});
+}
 
 module.exports = {
      caption: caption,

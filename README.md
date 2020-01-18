@@ -4,15 +4,16 @@ Zero dependency Groupme bot in vanilla NodeJS
 This was created to learn more about REST APIs, Servers, and HTTP requests. 
 
 ## Files:
-     * /Utils/captionJIMP uses the JIMP library to caption images 
 
-     * /Utils/Cloudinary uses the Cloudinary API to caption images and temporary store them to be uploaded to GroupMe servers.
+* /Utils/captionJIMP uses the JIMP library to caption images 
 
-     * /Utils/RequestOptions.js returns request options required to make the different HTTP requests to GroupMe API
+* /Utils/Cloudinary uses the Cloudinary API to caption images and temporary store them to be uploaded to GroupMe servers.
 
-     * /Utils/Utils includes all the helper functions to perform the different tasks made possible by GroupMe API
+* /Utils/RequestOptions.js returns request options required to make the different HTTP requests to GroupMe API
 
-     * Procfile: Used for Heroku, if you don't use Heroku you can discard it
+* /Utils/Utils includes all the helper functions to perform the different tasks made possible by GroupMe API
+
+* Procfile: Used for Heroku, if you don't use Heroku you can discard it
 
 
 Uses a mixture of both callback functions and Promises to serve as an example for both styles. 

@@ -1,7 +1,7 @@
 # NodeJS Groupme Bot
 Zero dependency Groupme bot in vanilla NodeJS
 
-This was created to aid in learning about REST APIs, Servers, and HTTP requests. 
+This was created to learn more about REST APIs, Servers, and HTTP requests. 
 
 ## Files:
      * /Utils/captionJIMP uses the JIMP library to caption images 

@@ -21,11 +21,11 @@ P.S. you can run the server on your localhost and use it as a callback url for y
 
 * /Utils/Cloudinary uses the Cloudinary API to caption images and temporary store them to be uploaded to GroupMe servers.
 
-* /Utils/RequestOptions.js returns request options required to make the different HTTP requests to GroupMe API
+* /Utils/RequestOptions returns request options required to make the different HTTP requests to GroupMe API
 
 * /Utils/Utils includes all the helper functions to perform the different tasks made possible by GroupMe API
 
-* Procfile: Used for Heroku, if you don't use Heroku you can discard it
+* /Procfile: Used for Heroku, if you don't use Heroku you can discard it
 
 
 ## Planned Features: 

@@ -7,7 +7,7 @@
 const cloudinary = require('cloudinary').v2;
 
 // default image
-const IMAGE_URL = 'https://raw.githubusercontent.com/AdelBeit/Groupme-Bot-NodeJS/heroku/Assets/raw/test2.jpg';
+const IMAGE_URL = 'https://res.cloudinary.com/wkjhldh/image/upload/v1579343066/raw/test2_dohhkl.jpg';
 
 let CLOUD_NAME = process.env.CLOUD_NAME,
 API_KEY = process.env.API_KEY,

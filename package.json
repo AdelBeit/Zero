@@ -2,7 +2,7 @@
   "name": "lemon-pie",
   "version": "1.0.0",
   "description": "Tempalte for making and using Groupme Bots",
-  "main": "bot.js",
+  "main": "server.js",
   "scripts": {
     "start": "node ./Server/server.js",
     "test": "nodemon ./Bot/bot.js",
@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/AdelBeit"
   },
-  "homepage": "https://github.com/AdelBeit/groupme-bot-nodejs#readme"
+  "homepage": "https://github.com/AdelBeit/groupme-bot-nodejs#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "cloudinary": "^1.18.1",
+    "jimp": "^0.9.3"
+  }
 }

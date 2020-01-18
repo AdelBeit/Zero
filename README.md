@@ -26,6 +26,6 @@ Inspired by the lack of thorough and complete code samples for HTTP routing and 
 
 Planned Features: 
 
-   ..* DB connection
+..* DB connection
  
-   ..* Text analytics
+..* Text analytics

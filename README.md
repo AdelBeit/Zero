@@ -19,7 +19,7 @@ P.S. you can run the server on your localhost and use it as a callback url for y
 
 * /Utils/captionJIMP uses the JIMP library to caption images 
 
-* /Utils/Cloudinary uses the Cloudinary API to caption images and temporary store them to be uploaded to GroupMe servers.
+* /Utils/Cloudinary uses the Cloudinary API to caption images and temporary store them to be uploaded to GroupMe servers
 
 * /Utils/RequestOptions returns request options required to make the different HTTP requests to GroupMe API
 

@@ -3,7 +3,7 @@ Zero dependency Groupme bot in vanilla NodeJS
 
 This was created to aid in learning about REST APIs, Servers, and HTTP requests. 
 
-Files:
+##Files:
      - /Utils/captionJIMP uses the JIMP library to caption images 
 
      - /Utils/Cloudinary uses the Cloudinary API to caption images and temporary store them to be uploaded to GroupMe servers.
@@ -22,10 +22,8 @@ Inspired by the lack of thorough and complete code samples for HTTP routing and 
 ** In order to use your own GroupMe bot with this code, go to https://dev.groupme.com/ and follow their guides to make your own bot then replace the credentials in this code with your own and have fun. PS you can run the server on your localhost and use it as a callback url for your groupme bot to receive group chat messages, just gotta make sure to port forward your public IP with the port you will be using to run this server. **
 
 
-/***/ 
+##Planned Features: 
 
-Planned Features: 
-
-..* DB connection
+* DB connection
  
-..* Text analytics
+* Text analytics

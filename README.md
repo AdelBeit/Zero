@@ -20,7 +20,9 @@ Uses a mixture of both callback functions and Promises to serve as an example fo
 
 Inspired by the lack of thorough and complete code samples for HTTP routing and making API requests with NodeJS. All the other examlpes on the web use frameworks such as express or libraries such as request that make it difficult to learn about the basics of HTTP routing and Servers.
 
-** In order to use your own GroupMe bot with this code, go to https://dev.groupme.com/ and follow their guides to make your own bot then replace the credentials in this code with your own and have fun. PS you can run the server on your localhost and use it as a callback url for your groupme bot to receive group chat messages, just gotta make sure to port forward your public IP with the port you will be using to run this server. **
+In order to use your own GroupMe bot with this code, go to https://dev.groupme.com/ and follow their guides to make your own bot then replace the credentials in this code with your own and have fun.
+
+PS you can run the server on your localhost and use it as a callback url for your groupme bot to receive group chat messages, just gotta make sure to port forward your public IP with the port you will be using to run this server.
 
 
 ## Planned Features: 

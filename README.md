@@ -25,7 +25,7 @@ P.S. you can run the server on your localhost and use it as a callback url for y
 
 * /Utils/Utils includes all the helper functions to perform the different tasks made possible by GroupMe API
 
-* /Procfile: Used for Heroku, if you don't use Heroku you can discard it
+* /Procfile Used for Heroku, if you don't use Heroku you can discard it
 
 
 ## Planned Features: 

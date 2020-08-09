@@ -8,7 +8,7 @@ This was created to learn more about REST APIs, Servers, and HTTP requests.
 
 Uses a mixture of both callback functions and Promises to serve as an example for both styles. 
 
-Inspired by the lack of thorough and complete code samples for HTTP routing and making API requests with NodeJS. All the other examlpes on the web use frameworks such as express or libraries such as request that make it difficult to learn about the basics of HTTP routing and Servers.
+Inspired by the lack of thorough and complete code samples for HTTP routing and making API requests with NodeJS. All the other examples on the web use frameworks such as express or libraries such as request that make it difficult to learn about the basics of HTTP routing and Servers.
 
 In order to use your own GroupMe bot with this code, go to https://dev.groupme.com/ and follow their guides to make your own bot then replace the credentials in this code with your own and have fun.
 
